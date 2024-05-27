@@ -16,9 +16,9 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	wc.lpfnWndProc = SimWndProc;
 	wc.style = CS_VREDRAW | CS_HREDRAW;
 	wc.hInstance = hInstance;
-	wc.hIcon = LoadIcon(NULL, MAKEINTRESOURCE(IDI_APPLICATION));
-	wc.hCursor = LoadCursor(NULL, MAKEINTRESOURCE(IDC_ARROW));
-	wc.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	wc.hIcon = LoadIcon(NULL, MAKEINTRESOURCE(32518)); // Значок щита безопасности.
+	wc.hCursor = LoadCursor(NULL, MAKEINTRESOURCE(32663)); // Курсор с компакт диском.
+	wc.hbrBackground = (HBRUSH)(COLOR_WINDOWTEXT + 1);
 	wc.lpszMenuName = NULL;
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = 0;
@@ -32,10 +32,10 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		hWnd = CreateWindowEx(NULL, TEXT("SimpleClassName"),
 			TEXT("Simple Application with Message handling"),
 			WS_OVERLAPPEDWINDOW,
-			0,
-			0,
-			CW_USEDEFAULT,
-			CW_USEDEFAULT,
+			200, // X положение (X)
+			200, // Y положение (Y)
+			450, // Ширина (nWidth)
+			450, // Высота (nHeight)
 			NULL,
 			NULL,
 			hInstance,
